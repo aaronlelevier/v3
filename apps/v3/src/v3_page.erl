@@ -14,6 +14,18 @@
 -compile(export_all).
 
 %% Urls
+item_urls() ->
+  [
+    % Druid
+    "https://us.forbiddenbike.com/products/druid-xt-complete",
+    "https://us.forbiddenbike.com/products/druid-slx-complete",
+    "https://us.forbiddenbike.com/products/druid-frame-kit",
+    % Dreadnought
+    "https://us.forbiddenbike.com/products/dreadnought-xt-complete-stealth",
+    "https://us.forbiddenbike.com/products/dreadnought-slx-complete-deep-space-9",
+    "https://us.forbiddenbike.com/products/dreadnought-frame"
+  ].
+
 -spec urls(atom()) -> string().
 urls(Type) ->
   case Type of
@@ -29,7 +41,7 @@ fetch(Url) ->
   {ok, {Status, _Headers, Body}} = httpc:request(get, {Url, ReqHeaders}, [], []),
   case Status of
     {_, 200, _} -> {ok, Body};
-    {_Http, StatusCode, Msg}-> {error, {StatusCode, Msg}}
+    {_Http, StatusCode, Msg} -> {error, {StatusCode, Msg}}
   end.
 
 %% temp functions
@@ -92,10 +104,10 @@ findelements(Tree, Target) ->
   findelements(Tree, Target, []).
 
 findelements({_A, B, C}, Target, L) ->
-  Elements = [element(1,X) || X <- B],
-  lager:debug("Target:~p Elements:~p", [Target, Elements]),
+  Elements = [element(1, X) || X <- B],
+  lager:debug("Target:~p Element:~p Elements:~p", [Target, Elements, B]),
   case lists:member(Target, Elements) of
-    true -> findelements(C, Target, [C|L]);
+    true -> findelements(C, Target, [C | L]);
     false -> findelements(C, Target, L)
   end;
 findelements([H | T], Target, L) ->
@@ -103,3 +115,25 @@ findelements([H | T], Target, L) ->
   findelements(T, Target, L1);
 findelements(_, _, L) ->
   L.
+
+
+%% Bike
+
+%% TODO: only works for Druid's!
+
+%% @doc Returns a list of 'versions' for a given 'item'
+%% item - for example is a Bike model
+%% version - would be a color and size
+-spec versions(string()) -> [map()].
+versions(Url) ->
+  {ok, Contents} = fetch(Url),
+  Tree = mochiweb_html:parse(list_to_binary(Contents)),
+
+  %% TODO: If we can't find this element, it might be in stock!
+  try
+    L = findsingle(Tree, {<<"data-app">>, <<"esc-out-of-stock">>}, {<<"type">>, <<"text/json">>}),
+    [H | _] = L,
+    jsx:decode(H)
+    catch
+      _:_  -> lager:error("Failed for url: ~p", [Url]), []
+  end.
