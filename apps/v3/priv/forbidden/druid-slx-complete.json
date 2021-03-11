@@ -1,0 +1,98 @@
+[
+  {
+    "available": false,
+    "barcode": null,
+    "compare_at_price": 499900,
+    "featured_image": "products/druid-slx-complete-product-img.jpg",
+    "id": 31794953388075,
+    "inventory_management": "shopify",
+    "inventory_policy": "deny",
+    "inventory_quantity": 0,
+    "name": " | escape",
+    "option1": "Small - Blue Steel",
+    "option2": null,
+    "option3": null,
+    "options": [
+      "Small - Blue Steel"
+    ],
+    "price": 499900,
+    "public_title": " | escape",
+    "requires_shipping": true,
+    "sku": "007.002.0001",
+    "taxable": true,
+    "title": "Small - Blue Steel",
+    "weight": 0
+  },
+  {
+    "available": false,
+    "barcode": null,
+    "compare_at_price": 499900,
+    "featured_image": "products/druid-slx-complete-product-img.jpg",
+    "id": 31794953420843,
+    "inventory_management": "shopify",
+    "inventory_policy": "deny",
+    "inventory_quantity": -1,
+    "name": " | escape",
+    "option1": "Medium - Blue Steel",
+    "option2": null,
+    "option3": null,
+    "options": [
+      "Medium - Blue Steel"
+    ],
+    "price": 499900,
+    "public_title": " | escape",
+    "requires_shipping": true,
+    "sku": "007.002.0002",
+    "taxable": true,
+    "title": "Medium - Blue Steel",
+    "weight": 0
+  },
+  {
+    "available": false,
+    "barcode": null,
+    "compare_at_price": 499900,
+    "featured_image": "products/druid-slx-complete-product-img.jpg",
+    "id": 31794953453611,
+    "inventory_management": "shopify",
+    "inventory_policy": "deny",
+    "inventory_quantity": 0,
+    "name": " | escape",
+    "option1": "Large - Blue Steel",
+    "option2": null,
+    "option3": null,
+    "options": [
+      "Large - Blue Steel"
+    ],
+    "price": 499900,
+    "public_title": " | escape",
+    "requires_shipping": true,
+    "sku": "007.002.0003",
+    "taxable": true,
+    "title": "Large - Blue Steel",
+    "weight": 0
+  },
+  {
+    "available": false,
+    "barcode": null,
+    "compare_at_price": 499900,
+    "featured_image": "products/druid-slx-complete-product-img.jpg",
+    "id": 31794953486379,
+    "inventory_management": "shopify",
+    "inventory_policy": "deny",
+    "inventory_quantity": 0,
+    "name": " | escape",
+    "option1": "XL - Blue Steel",
+    "option2": null,
+    "option3": null,
+    "options": [
+      "XL - Blue Steel"
+    ],
+    "price": 499900,
+    "public_title": " | escape",
+    "requires_shipping": true,
+    "sku": "007.002.0004",
+    "taxable": true,
+    "title": "XL - Blue Steel",
+    "weight": 0
+  }
+]

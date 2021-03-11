@@ -1,0 +1,98 @@
+[
+  {
+    "available": false,
+    "barcode": "007.102.0001",
+    "compare_at_price": null,
+    "featured_image": "products/dreadnought-slx-product-image.jpg",
+    "id": 33100893683755,
+    "inventory_management": "shopify",
+    "inventory_policy": "deny",
+    "inventory_quantity": 0,
+    "name": " | escape",
+    "option1": "Small",
+    "option2": null,
+    "option3": null,
+    "options": [
+      "Small"
+    ],
+    "price": 534900,
+    "public_title": " | escape",
+    "requires_shipping": true,
+    "sku": "007.102.0001",
+    "taxable": true,
+    "title": "Small",
+    "weight": 0
+  },
+  {
+    "available": false,
+    "barcode": "007.102.0002",
+    "compare_at_price": null,
+    "featured_image": "products/dreadnought-slx-product-image.jpg",
+    "id": 33100894535723,
+    "inventory_management": "shopify",
+    "inventory_policy": "deny",
+    "inventory_quantity": 0,
+    "name": " | escape",
+    "option1": "Medium",
+    "option2": null,
+    "option3": null,
+    "options": [
+      "Medium"
+    ],
+    "price": 534900,
+    "public_title": " | escape",
+    "requires_shipping": true,
+    "sku": "007.102.0002",
+    "taxable": true,
+    "title": "Medium",
+    "weight": 0
+  },
+  {
+    "available": false,
+    "barcode": "007.102.0003",
+    "compare_at_price": null,
+    "featured_image": "products/dreadnought-slx-product-image.jpg",
+    "id": 33100893716523,
+    "inventory_management": "shopify",
+    "inventory_policy": "deny",
+    "inventory_quantity": 0,
+    "name": " | escape",
+    "option1": "Large",
+    "option2": null,
+    "option3": null,
+    "options": [
+      "Large"
+    ],
+    "price": 534900,
+    "public_title": " | escape",
+    "requires_shipping": true,
+    "sku": "007.102.0003",
+    "taxable": true,
+    "title": "Large",
+    "weight": 0
+  },
+  {
+    "available": false,
+    "barcode": "007.102.0004",
+    "compare_at_price": null,
+    "featured_image": "products/dreadnought-slx-product-image.jpg",
+    "id": 33100893749291,
+    "inventory_management": "shopify",
+    "inventory_policy": "deny",
+    "inventory_quantity": 0,
+    "name": " | escape",
+    "option1": "X-Large",
+    "option2": null,
+    "option3": null,
+    "options": [
+      "X-Large"
+    ],
+    "price": 534900,
+    "public_title": " | escape",
+    "requires_shipping": true,
+    "sku": "007.102.0004",
+    "taxable": true,
+    "title": "X-Large",
+    "weight": 0
+  }
+]

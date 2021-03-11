@@ -1,0 +1,98 @@
+[
+  {
+    "available": false,
+    "barcode": null,
+    "compare_at_price": 589900,
+    "featured_image": "products/druid-xt-complete-product-img.jpg",
+    "id": 31794951847979,
+    "inventory_management": "shopify",
+    "inventory_policy": "deny",
+    "inventory_quantity": 0,
+    "name": " | escape",
+    "option1": "Small - Mr Brownstone",
+    "option2": null,
+    "option3": null,
+    "options": [
+      "Small - Mr Brownstone"
+    ],
+    "price": 589900,
+    "public_title": " | escape",
+    "requires_shipping": true,
+    "sku": "007.001.0001",
+    "taxable": true,
+    "title": "Small - Mr Brownstone",
+    "weight": 0
+  },
+  {
+    "available": false,
+    "barcode": null,
+    "compare_at_price": 589900,
+    "featured_image": "products/druid-xt-complete-product-img.jpg",
+    "id": 31794951880747,
+    "inventory_management": "shopify",
+    "inventory_policy": "deny",
+    "inventory_quantity": 0,
+    "name": " | escape",
+    "option1": "Medium - Mr Brownstone",
+    "option2": null,
+    "option3": null,
+    "options": [
+      "Medium - Mr Brownstone"
+    ],
+    "price": 589900,
+    "public_title": " | escape",
+    "requires_shipping": true,
+    "sku": "007.001.0002",
+    "taxable": true,
+    "title": "Medium - Mr Brownstone",
+    "weight": 0
+  },
+  {
+    "available": false,
+    "barcode": null,
+    "compare_at_price": 589900,
+    "featured_image": "products/druid-xt-complete-product-img.jpg",
+    "id": 31794951913515,
+    "inventory_management": "shopify",
+    "inventory_policy": "deny",
+    "inventory_quantity": 0,
+    "name": " | escape",
+    "option1": "Large - Mr Brownstone",
+    "option2": null,
+    "option3": null,
+    "options": [
+      "Large - Mr Brownstone"
+    ],
+    "price": 589900,
+    "public_title": " | escape",
+    "requires_shipping": true,
+    "sku": "007.001.0003",
+    "taxable": true,
+    "title": "Large - Mr Brownstone",
+    "weight": 0
+  },
+  {
+    "available": false,
+    "barcode": null,
+    "compare_at_price": 589900,
+    "featured_image": "products/druid-xt-complete-product-img.jpg",
+    "id": 31794951946283,
+    "inventory_management": "shopify",
+    "inventory_policy": "deny",
+    "inventory_quantity": 0,
+    "name": " | escape",
+    "option1": "XL - Mr Brownstone",
+    "option2": null,
+    "option3": null,
+    "options": [
+      "XL - Mr Brownstone"
+    ],
+    "price": 589900,
+    "public_title": " | escape",
+    "requires_shipping": true,
+    "sku": "007.001.0004",
+    "taxable": true,
+    "title": "XL - Mr Brownstone",
+    "weight": 0
+  }
+]

@@ -14,7 +14,7 @@
 -compile(export_all).
 
 %% Urls
-item_urls() ->
+urls() ->
   [
     % Druid
     "https://us.forbiddenbike.com/products/druid-xt-complete",
@@ -88,7 +88,7 @@ findsingle(Tree, Target) ->
   findsingle(Tree, Target, []).
 
 findsingle({_A, B, C}, Target, L) ->
-  case lists:member(Target, B) of
+  case lists:member(Target, coerce_to_list(B)) of
     true -> C;
     false -> findsingle(C, Target, L)
   end;
@@ -116,6 +116,13 @@ findelements([H | T], Target, L) ->
 findelements(_, _, L) ->
   L.
 
+coerce_to_list(X) ->
+  if
+    is_list(X) =:= true -> X;
+    true -> [X]
+  end.
+
+
 
 %% Bike
 
@@ -132,8 +139,55 @@ versions(Url) ->
   %% TODO: If we can't find this element, it might be in stock!
   try
     L = findsingle(Tree, {<<"data-app">>, <<"esc-out-of-stock">>}, {<<"type">>, <<"text/json">>}),
-    [H | _] = L,
-    jsx:decode(H)
-    catch
-      _:_  -> lager:error("Failed for url: ~p", [Url]), []
+    jsx:decode(lists:nth(1, L))
+  catch
+    _:_ -> lager:error("Failed for url: ~p", [Url]), []
   end.
+
+
+filename(Url) ->
+  Brand = "forbidden",
+  Product = filename:basename(Url),
+  filename:join(
+    v3_page:priv_dir(),
+    str_format("~s/~s.json", [Brand, Product])).
+
+dirname() ->
+  filename:join(v3_page:priv_dir(), "forbidden").
+
+-spec str_format(String::string(), Args::list()) -> string().
+str_format(String, Args) ->
+  lists:flatten(io_lib:format(String, Args)).
+
+
+file_write_product_map(Filename, Map) ->
+  ok = file:write_file(
+    Filename,
+    jsx:encode(Map, [{space, 1}, {indent, 2}])),
+  ok.
+
+%% @doc Write a single 'Url' page's product info to JSON
+main(Url) ->
+  L = versions(Url),
+  file_write_product_map(filename(Url), L).
+
+%% @doc Write all 'Url's page's product info to JSON
+main_all() ->
+  [spawn(?MODULE, main, [X]) || X <- urls()].
+
+any_inventory() ->
+  {ok, Names} = file:list_dir(dirname()),
+  lager:debug("Filenames: ~p", [Names]),
+  Filenames = [
+    filename:join(dirname(), F)
+    || F <- lists:filter(fun(X) -> filename:extension(X) == ".json" end, Names)
+  ],
+  any_inventory(Filenames, []).
+
+any_inventory([], Acc) -> Acc;
+any_inventory([F|T], Acc) ->
+  {ok, Body} = file:read_file(F),
+  L = jsx:decode(Body),
+  Matches = lists:filter(fun(X) -> maps:get(<<"inventory_quantity">>, X) > 0 end, L),
+  lager:debug("Matches: ~p", [Matches]),
+  any_inventory(T, lists:flatten(Matches, Acc)).
