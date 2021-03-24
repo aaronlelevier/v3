@@ -1,9 +1,11 @@
-v3
-=====
+# v3
 
-An OTP application
+v3 stands for my 3rd time trying Erlang.
 
-Build
------
+For now this repo builds on code in my previous Erlang repo [dta](https://github.com/aaronlelevier/dta) for doing web scraping with Erlang.
 
-    $ rebar3 compile
+## Build
+
+```
+$ rebar3 compile
+```
